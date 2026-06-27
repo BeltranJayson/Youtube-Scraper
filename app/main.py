@@ -8,15 +8,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-
-@app.get("/")
-async def root():
-    return {
-        "message": "YouTube Scraper API is running"
-    }
-
-
-@app.get("/youtube/search")
+@app.get("/youtube/search", tags=["YouTube Scraper"])
 async def youtube_search(keyword: str):
 
     if not keyword or not keyword.strip():
